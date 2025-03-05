@@ -22,7 +22,10 @@ $(document).ready(function () {
 function processSelection(e) {
   let text = getSelectedText();
 
-  if ($.isNumeric(text) && [10, 13].includes(text.length)) {
+  if ($.isNumeric(text) && [10, 13, 16].includes(text.length)) {
+    if (text.length == 16) {  // Handle nanosecond timestamps
+      text = text / 1000000;
+    }
     if (text.length == 13) {  // Handle millisecond timestamps
       text = text / 1000;
     }
