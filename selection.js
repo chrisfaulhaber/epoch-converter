@@ -24,7 +24,7 @@ function processSelection(e) {
 
   if ($.isNumeric(text) && [10, 13, 19].includes(text.length)) {
     if (text.length == 19) {  // Handle nanosecond timestamps
-      text = text / 1000000;
+      text = text / 1000000000;
     }
     if (text.length == 13) {  // Handle millisecond timestamps
       text = text / 1000;
